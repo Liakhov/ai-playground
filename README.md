@@ -1,6 +1,6 @@
 # AI Playground
 
-A simple TypeScript CLI to ask questions to OpenAI.
+A collection of TypeScript utility functions for interacting with various AI models and providers. A simple CLI interface to experiment with AI capabilities directly from your terminal.
 
 ## Setup
 
@@ -8,7 +8,7 @@ A simple TypeScript CLI to ask questions to OpenAI.
 npm install
 ```
 
-Create a `.env` file with your OpenAI API key:
+Create a `.env` file with your API keys:
 
 ```
 OPENAI_API_KEY=your_api_key_here
