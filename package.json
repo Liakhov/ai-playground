@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "tsx watch src/index.ts",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preview": "tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",

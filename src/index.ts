@@ -1,16 +1,4 @@
-import 'dotenv/config';
-import OpenAI from 'openai';
-
-const openai = new OpenAI();
-
-async function ask(question: string): Promise<void> {
-  const response = await openai.chat.completions.create({
-    model: 'gpt-4o-mini',
-    messages: [{ role: 'user', content: question }],
-  });
-
-  console.log(response.choices[0]?.message?.content);
-}
+import { ask } from './tools/ask.js';
 
 const question = process.argv.slice(2).join(' ');
 
