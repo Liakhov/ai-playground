@@ -8,7 +8,11 @@ A collection of TypeScript utility functions for interacting with various AI mod
 npm install
 ```
 
-Create a `.env` file with your API keys:
+Copy `.env-example` to `.env` and fill in your API keys:
+
+```bash
+cp .env-example .env
+```
 
 ```
 OPENAI_API_KEY=your_api_key_here
@@ -20,7 +24,21 @@ OPENAI_API_KEY=your_api_key_here
 npm start -- "Your question here"
 ```
 
+## Project Structure
+
+```
+src/
+  index.ts              # Entry point / CLI router
+  lib/
+    openai.ts           # Shared OpenAI client
+  tools/
+    ask.ts              # Chat Q&A via OpenAI
+    mp4ToMp3.ts         # MP4 to MP3 conversion (ffmpeg)
+    transcribeMp3.ts    # MP3 to text transcription (OpenAI)
+```
+
 ## Scripts
 
-- `npm start` - Run the CLI
+- `npm start` - Run the CLI (with watch mode)
 - `npm run build` - Compile TypeScript to JavaScript
+- `npm run preview` - Build and run the compiled output
