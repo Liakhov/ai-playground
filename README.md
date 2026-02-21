@@ -20,8 +20,19 @@ OPENAI_API_KEY=your_api_key_here
 
 ## Usage
 
+### Ask a question (OpenAI chat)
 ```bash
-npm start -- "Your question here"
+npm start -- ask "Your question here"
+```
+
+### Convert MP4 to MP3
+```bash
+npm start -- convert input.mp4 output.mp3
+```
+
+### Transcribe MP3 to text
+```bash
+npm start -- transcribe input.mp3 output.txt
 ```
 
 ## Project Structure
