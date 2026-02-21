@@ -30,9 +30,9 @@ npm start -- ask "Your question here"
 npm start -- convert input.mp4 output.mp3
 ```
 
-### Transcribe MP3 to text
+### Transcribe MP3 to markdown
 ```bash
-npm start -- transcribe input.mp3 output.txt
+npm start -- transcribe input.mp3 output.md
 ```
 
 ## Project Structure

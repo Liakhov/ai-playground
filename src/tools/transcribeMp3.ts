@@ -2,14 +2,14 @@ import fs from "fs";
 import { openai } from "../lib/openai.js";
 
 /**
- * Transcribes an MP3 file using OpenAI and saves the result to a text file.
+ * Transcribes an MP3 file using OpenAI and saves the result to a markdown file.
  * @param mp3Path Path to the input MP3 file.
- * @param outputTxtPath Path to save the transcribed text file.
- * @returns Promise that resolves with the output text file path.
+ * @param outputMdPath Path to save the transcribed markdown file.
+ * @returns Promise that resolves with the output markdown file path.
  */
 export async function transcribeMp3(
   mp3Path: string,
-  outputTxtPath: string
+  outputMdPath: string
 ): Promise<string> {
   const stream = await openai.audio.transcriptions.create({
     file: fs.createReadStream(mp3Path),
@@ -18,7 +18,7 @@ export async function transcribeMp3(
     stream: true,
   });
 
-  const writeStream = fs.createWriteStream(outputTxtPath);
+  const writeStream = fs.createWriteStream(outputMdPath);
   for await (const event of stream as AsyncIterable<any>) {
     if (event && typeof event === "object") {
       if (
@@ -36,5 +36,5 @@ export async function transcribeMp3(
     }
   }
   writeStream.end();
-  return outputTxtPath;
+  return outputMdPath;
 }

@@ -7,7 +7,7 @@ const [command, ...args] = process.argv.slice(2);
 const commands: Record<string, string> = {
   ask:        'npm start -- ask "Your question here"',
   convert:    'npm start -- convert input.mp4 output.mp3',
-  transcribe: 'npm start -- transcribe input.mp3 output.txt',
+  transcribe: 'npm start -- transcribe input.mp3 output.md',
 };
 
 function printUsage() {
